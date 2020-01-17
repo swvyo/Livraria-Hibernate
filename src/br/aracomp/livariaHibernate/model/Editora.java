@@ -1,10 +1,13 @@
 package br.aracomp.livariaHibernate.model;
 
+import java.util.ArrayList;
+
 public class Editora {
 	
 	private String nome;
 	private int id;
 	private String email;
+	private ArrayList<Livro> livros;
 	
 	
 	public String getNome() {
@@ -24,6 +27,14 @@ public class Editora {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public void setLivros(ArrayList<Livro> livros) {
+		this.livros = livros;
+	}
+	
+	public ArrayList<Livro> getLivros() {
+		return livros;
 	}
 
 }
