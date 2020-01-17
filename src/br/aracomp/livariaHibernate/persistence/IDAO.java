@@ -1,5 +1,14 @@
 package br.aracomp.livariaHibernate.persistence;
 
-public class IDAO {
+
+import java.util.List;
+
+public interface IDAO <TIPO> {
+	
+	void add(TIPO obj);
+
+	//List<TIPO> getAll();
+
+	//TIPO getById(int id);
 
 }

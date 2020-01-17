@@ -17,14 +17,19 @@ public class Livraria {
 	private int id;
 	private String endereco;
 	private String telefone;
-	@Column(name= "nome", nullable = false)
 	private String nome;
 	private double faturamento;
 	private ArrayList<Funcionario> funcionarios;
 	private ArrayList<Cliente> clientes;
 	private ArrayList<Livro> livros;
 	
-	
+	public Livraria() {
+		
+		
+	}
+	public Livraria(String nome) {
+		this.nome = nome;
+	}
 	public int getId() {
 		return id;
 	}
