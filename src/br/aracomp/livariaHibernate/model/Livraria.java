@@ -2,11 +2,22 @@ package br.aracomp.livariaHibernate.model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 public class Livraria {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String endereco;
 	private String telefone;
+	@Column(name= "nome", nullable = false)
 	private String nome;
 	private double faturamento;
 	private ArrayList<Funcionario> funcionarios;

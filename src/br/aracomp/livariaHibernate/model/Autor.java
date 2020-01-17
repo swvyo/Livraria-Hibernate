@@ -1,5 +1,6 @@
 package br.aracomp.livariaHibernate.model;
 
+
 import java.util.ArrayList;
 
 public class Autor {
