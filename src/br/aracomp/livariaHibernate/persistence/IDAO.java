@@ -1,7 +1,7 @@
 package br.aracomp.livariaHibernate.persistence;
 
 
-import java.util.List;
+
 
 public interface IDAO <TIPO> {
 	

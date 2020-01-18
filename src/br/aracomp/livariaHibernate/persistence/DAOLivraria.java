@@ -1,17 +1,16 @@
 package br.aracomp.livariaHibernate.persistence;
 
 import javax.persistence.EntityManager;
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import br.aracomp.livariaHibernate.model.Livraria;
 
 public class DAOLivraria implements IDAO<Livraria> {
-	private static final EntityManagerFactory entity = Persistence.createEntityManagerFactory("livros");
+	private static final EntityManagerFactory entity = Persistence.createEntityManagerFactory("default");
 	
 	EntityManager entityManager = entity.createEntityManager();
 

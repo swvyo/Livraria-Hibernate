@@ -2,17 +2,33 @@ package br.aracomp.livariaHibernate.model;
 
 import java.util.ArrayList;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Funcionario  extends Pessoa{
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int cod;
 	private double vendas;
 	private double salario;
 	private double comissao;
+	@ManyToOne(cascade=CascadeType.ALL)   
+	@JoinColumn(name="livraria_id", referencedColumnName="id",nullable=true)
 	private Livraria livraria;
 	
+	public Funcionario() {
+		
+	}
 	public Funcionario(Livraria livraria, double salario) {
 		this.salario = salario;
-		this.livraria = livraria;
+		//this.livraria = livraria;
 	}
 	
 	public int getCod() {
@@ -40,13 +56,13 @@ public class Funcionario  extends Pessoa{
 	public void setComissao(double comissao) {
 		this.comissao = comissao;
 	}
-	public Livraria getLivraria() {
-		return livraria;
-	}
+//	public Livraria getLivraria() {
+//		return livraria;
+//	}
 
-	public void setLivraria(Livraria livraria) {
-		this.livraria = livraria;
-	}
+//	public void setLivraria(Livraria livraria) {
+//		this.livraria = livraria;
+//	}
 
 	public boolean vender(ArrayList<Livro> livros, Cliente cliente, double valor) {
 		valor = valor + cliente.getCredito();
@@ -89,7 +105,7 @@ public class Funcionario  extends Pessoa{
 	
 	private void faturamento(double precoCompra,double credito, double comissao) {
 		double fat = precoCompra-credito-comissao;
-		livraria.setFaturamento(fat);
+//		livraria.setFaturamento(fat);
 	}
 
 }

@@ -1,12 +1,14 @@
 package br.aracomp.livariaHibernate.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -19,7 +21,8 @@ public class Livraria {
 	private String telefone;
 	private String nome;
 	private double faturamento;
-	private ArrayList<Funcionario> funcionarios;
+	@OneToMany(mappedBy="livraria", targetEntity = Funcionario.class) 
+	private Collection funcionarios;
 	private ArrayList<Cliente> clientes;
 	private ArrayList<Livro> livros;
 	
@@ -60,10 +63,10 @@ public class Livraria {
 	public void setFaturamento(double faturamento) {
 		this.faturamento = faturamento;
 	}
-	public ArrayList<Funcionario> getFuncionarios() {
+	public Collection getFuncionarios() {
 		return funcionarios;
 	}
-	public void setFuncionarios(ArrayList<Funcionario> funcionarios) {
+	public void setFuncionarios(Collection funcionarios) {
 		this.funcionarios = funcionarios;
 	}
 	public ArrayList<Cliente> getClientes() {
