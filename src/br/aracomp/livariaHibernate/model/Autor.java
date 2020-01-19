@@ -3,35 +3,12 @@ package br.aracomp.livariaHibernate.model;
 
 import java.util.ArrayList;
 
-public class Autor {
+public class Autor extends Pessoa{
 	
 	
-	
-	private int id;
-	private String nome;
-	private String telefone;
 	private ArrayList<Livro> livrosPublicados;
-	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	public String getTelefone() {
-		return telefone;
-	}
-	
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+	private int avaliacao;
+
 	
 	public void setLivrosPublicados(ArrayList<Livro> livrosPublicados) {
 		this.livrosPublicados = livrosPublicados;
@@ -39,6 +16,14 @@ public class Autor {
 	
 	public ArrayList<Livro> getLivrosPublicados() {
 		return livrosPublicados;
+	}
+
+	public int getAvaliacao() {
+		return avaliacao;
+	}
+
+	public void setAvaliacao(int avaliacao) {
+		this.avaliacao = avaliacao;
 	}
 			
 }

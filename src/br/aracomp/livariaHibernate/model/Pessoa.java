@@ -1,17 +1,46 @@
 package br.aracomp.livariaHibernate.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Pessoa {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	@ManyToOne   
+	@JoinColumn(name="endereco_id", referencedColumnName="id",nullable=true)
+	private Endereco endereco;
+	private String telefone;
+	private String nome;
+	 
 	
-	 private String endereco;
-	 private String telefone;
-	 private String nome;
-	 
-	 
-	public String getEndereco() {
+	public Pessoa() {
+		
+	}
+	
+	public Pessoa(String nome, String telefone, Endereco endereco) {
+		this.endereco = endereco;
+		this.nome = nome;
+		this.telefone = telefone;
+		
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public Endereco getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 	public String getTelefone() {

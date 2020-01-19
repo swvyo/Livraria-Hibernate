@@ -13,9 +13,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Funcionario  extends Pessoa{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cod;
+
 	private double vendas;
 	private double salario;
 	private double comissao;
@@ -31,12 +29,7 @@ public class Funcionario  extends Pessoa{
 		//this.livraria = livraria;
 	}
 	
-	public int getCod() {
-		return cod;
-	}
-	public void setCod(int cod) {
-		this.cod = cod;
-	}
+
 	public double getVendas() {
 		return vendas;
 	}
